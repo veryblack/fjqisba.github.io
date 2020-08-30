@@ -1,6 +1,8 @@
 ---
 title: "Git学习笔记"
 date: 2020-08-23
+tags: ["git"]
+categories: ["杂文"]
 ---
 
 # Git学习笔记

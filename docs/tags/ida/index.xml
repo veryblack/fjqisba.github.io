@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>IDA - 标签 - fjqisba的个人博客</title>
+        <link>https://fjqisba.github.io/docs/tags/ida/</link>
+        <description>IDA - 标签 - fjqisba的个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>fjqisba@sohu.com (fjqisba)</managingEditor>
+            <webMaster>fjqisba@sohu.com (fjqisba)</webMaster><lastBuildDate>Mon, 17 Aug 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://fjqisba.github.io/docs/tags/ida/" rel="self" type="application/rss+xml" /><item>
+    <title>配置IDA环境</title>
+    <link>https://fjqisba.github.io/docs/posts/%E9%85%8D%E7%BD%AEida%E7%8E%AF%E5%A2%83/</link>
+    <pubDate>Mon, 17 Aug 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://fjqisba.github.io/docs/posts/%E9%85%8D%E7%BD%AEida%E7%8E%AF%E5%A2%83/</guid>
+    <description><![CDATA[配置IDA环境 当前IDA能用的版本勉强只有一个泄露出安装包+跑出安装包Key的IDA 7.2版本 + x64 Hex-Rays 可以参考一下此文档: https://github.com/jas502n/IDA_Pro_7.2 由于没有完整的He]]></description>
+</item></channel>
+</rss>
