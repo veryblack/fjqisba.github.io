@@ -1,12 +1,4 @@
 .DS_Store
 */.DS_Store
 
-node_modules
-archetypes
-content
-data
-layouts
-resources
-static
-themes
 _site
