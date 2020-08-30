@@ -1,3 +1,4 @@
+rm -f -r docs
 hugo -d docs
 git add .
 git status
