@@ -1,50 +1,50 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Tags - 标签 - fjqisba的个人博客</title>
-        <link>https://fjqisba.github.io/docs/tags/</link>
+        <link>https://fjqisba.github.io/tags/</link>
         <description>Tags - 标签 - fjqisba的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>fjqisba@sohu.com (fjqisba)</managingEditor>
-            <webMaster>fjqisba@sohu.com (fjqisba)</webMaster><lastBuildDate>Sun, 30 Aug 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://fjqisba.github.io/docs/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>fjqisba@sohu.com (fjqisba)</webMaster><lastBuildDate>Sun, 30 Aug 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://fjqisba.github.io/tags/" rel="self" type="application/rss+xml" /><item>
     <title>相似度</title>
-    <link>https://fjqisba.github.io/docs/tags/%E7%9B%B8%E4%BC%BC%E5%BA%A6/</link>
+    <link>https://fjqisba.github.io/tags/%E7%9B%B8%E4%BC%BC%E5%BA%A6/</link>
     <pubDate>Sun, 30 Aug 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://fjqisba.github.io/docs/tags/%E7%9B%B8%E4%BC%BC%E5%BA%A6/</guid>
+    <guid>https://fjqisba.github.io/tags/%E7%9B%B8%E4%BC%BC%E5%BA%A6/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>距离</title>
-    <link>https://fjqisba.github.io/docs/tags/%E8%B7%9D%E7%A6%BB/</link>
+    <link>https://fjqisba.github.io/tags/%E8%B7%9D%E7%A6%BB/</link>
     <pubDate>Sun, 30 Aug 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://fjqisba.github.io/docs/tags/%E8%B7%9D%E7%A6%BB/</guid>
+    <guid>https://fjqisba.github.io/tags/%E8%B7%9D%E7%A6%BB/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>git</title>
-    <link>https://fjqisba.github.io/docs/tags/git/</link>
+    <link>https://fjqisba.github.io/tags/git/</link>
     <pubDate>Sun, 23 Aug 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://fjqisba.github.io/docs/tags/git/</guid>
+    <guid>https://fjqisba.github.io/tags/git/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>IDA</title>
-    <link>https://fjqisba.github.io/docs/tags/ida/</link>
+    <link>https://fjqisba.github.io/tags/ida/</link>
     <pubDate>Mon, 17 Aug 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://fjqisba.github.io/docs/tags/ida/</guid>
+    <guid>https://fjqisba.github.io/tags/ida/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>反汇编引擎</title>
-    <link>https://fjqisba.github.io/docs/tags/%E5%8F%8D%E6%B1%87%E7%BC%96%E5%BC%95%E6%93%8E/</link>
+    <link>https://fjqisba.github.io/tags/%E5%8F%8D%E6%B1%87%E7%BC%96%E5%BC%95%E6%93%8E/</link>
     <pubDate>Sun, 16 Aug 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://fjqisba.github.io/docs/tags/%E5%8F%8D%E6%B1%87%E7%BC%96%E5%BC%95%E6%93%8E/</guid>
+    <guid>https://fjqisba.github.io/tags/%E5%8F%8D%E6%B1%87%E7%BC%96%E5%BC%95%E6%93%8E/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>实习</title>
-    <link>https://fjqisba.github.io/docs/tags/%E5%AE%9E%E4%B9%A0/</link>
+    <link>https://fjqisba.github.io/tags/%E5%AE%9E%E4%B9%A0/</link>
     <pubDate>Sat, 17 Nov 2018 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://fjqisba.github.io/docs/tags/%E5%AE%9E%E4%B9%A0/</guid>
+    <guid>https://fjqisba.github.io/tags/%E5%AE%9E%E4%B9%A0/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>

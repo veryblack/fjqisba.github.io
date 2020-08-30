@@ -1,29 +1,29 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>杂文 - 分类 - fjqisba的个人博客</title>
-        <link>https://fjqisba.github.io/docs/categories/%E6%9D%82%E6%96%87/</link>
+        <link>https://fjqisba.github.io/categories/%E6%9D%82%E6%96%87/</link>
         <description>杂文 - 分类 - fjqisba的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>fjqisba@sohu.com (fjqisba)</managingEditor>
-            <webMaster>fjqisba@sohu.com (fjqisba)</webMaster><lastBuildDate>Sun, 23 Aug 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://fjqisba.github.io/docs/categories/%E6%9D%82%E6%96%87/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>fjqisba@sohu.com (fjqisba)</webMaster><lastBuildDate>Sun, 23 Aug 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://fjqisba.github.io/categories/%E6%9D%82%E6%96%87/" rel="self" type="application/rss+xml" /><item>
     <title>Git学习笔记</title>
-    <link>https://fjqisba.github.io/docs/posts/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+    <link>https://fjqisba.github.io/posts/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
     <pubDate>Sun, 23 Aug 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://fjqisba.github.io/docs/posts/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+    <guid>https://fjqisba.github.io/posts/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
     <description><![CDATA[Git学习笔记 克隆含有子模块的项目 当一个git项目含有子模块(submodule)时，直接克隆下来的子模块目录里面是空的。 这时可以在执行gi]]></description>
 </item><item>
     <title>配置IDA环境</title>
-    <link>https://fjqisba.github.io/docs/posts/%E9%85%8D%E7%BD%AEida%E7%8E%AF%E5%A2%83/</link>
+    <link>https://fjqisba.github.io/posts/%E9%85%8D%E7%BD%AEida%E7%8E%AF%E5%A2%83/</link>
     <pubDate>Mon, 17 Aug 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://fjqisba.github.io/docs/posts/%E9%85%8D%E7%BD%AEida%E7%8E%AF%E5%A2%83/</guid>
+    <guid>https://fjqisba.github.io/posts/%E9%85%8D%E7%BD%AEida%E7%8E%AF%E5%A2%83/</guid>
     <description><![CDATA[配置IDA环境 当前IDA能用的版本勉强只有一个泄露出安装包+跑出安装包Key的IDA 7.2版本 + x64 Hex-Rays 可以参考一下此文档: https://github.com/jas502n/IDA_Pro_7.2 由于没有完整的He]]></description>
 </item><item>
     <title>ZyDis反汇编引擎</title>
-    <link>https://fjqisba.github.io/docs/posts/zydis%E5%8F%8D%E6%B1%87%E7%BC%96%E5%BC%95%E6%93%8E/</link>
+    <link>https://fjqisba.github.io/posts/zydis%E5%8F%8D%E6%B1%87%E7%BC%96%E5%BC%95%E6%93%8E/</link>
     <pubDate>Sun, 16 Aug 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://fjqisba.github.io/docs/posts/zydis%E5%8F%8D%E6%B1%87%E7%BC%96%E5%BC%95%E6%93%8E/</guid>
+    <guid>https://fjqisba.github.io/posts/zydis%E5%8F%8D%E6%B1%87%E7%BC%96%E5%BC%95%E6%93%8E/</guid>
     <description><![CDATA[ZyDis反汇编引擎 Zydis是一个开源的反汇编引擎，项目地址如下: https://github.com/zyantific/zydis 配置ZyDis库 1.克隆存储库，得到Zydis源码。 2.由于笔者使用的]]></description>
 </item></channel>
 </rss>

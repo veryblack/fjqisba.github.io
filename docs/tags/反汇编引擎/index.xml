@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>反汇编引擎 - 标签 - fjqisba的个人博客</title>
-        <link>https://fjqisba.github.io/docs/tags/%E5%8F%8D%E6%B1%87%E7%BC%96%E5%BC%95%E6%93%8E/</link>
+        <link>https://fjqisba.github.io/tags/%E5%8F%8D%E6%B1%87%E7%BC%96%E5%BC%95%E6%93%8E/</link>
         <description>反汇编引擎 - 标签 - fjqisba的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>fjqisba@sohu.com (fjqisba)</managingEditor>
-            <webMaster>fjqisba@sohu.com (fjqisba)</webMaster><lastBuildDate>Sun, 16 Aug 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://fjqisba.github.io/docs/tags/%E5%8F%8D%E6%B1%87%E7%BC%96%E5%BC%95%E6%93%8E/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>fjqisba@sohu.com (fjqisba)</webMaster><lastBuildDate>Sun, 16 Aug 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://fjqisba.github.io/tags/%E5%8F%8D%E6%B1%87%E7%BC%96%E5%BC%95%E6%93%8E/" rel="self" type="application/rss+xml" /><item>
     <title>ZyDis反汇编引擎</title>
-    <link>https://fjqisba.github.io/docs/posts/zydis%E5%8F%8D%E6%B1%87%E7%BC%96%E5%BC%95%E6%93%8E/</link>
+    <link>https://fjqisba.github.io/posts/zydis%E5%8F%8D%E6%B1%87%E7%BC%96%E5%BC%95%E6%93%8E/</link>
     <pubDate>Sun, 16 Aug 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://fjqisba.github.io/docs/posts/zydis%E5%8F%8D%E6%B1%87%E7%BC%96%E5%BC%95%E6%93%8E/</guid>
+    <guid>https://fjqisba.github.io/posts/zydis%E5%8F%8D%E6%B1%87%E7%BC%96%E5%BC%95%E6%93%8E/</guid>
     <description><![CDATA[ZyDis反汇编引擎 Zydis是一个开源的反汇编引擎，项目地址如下: https://github.com/zyantific/zydis 配置ZyDis库 1.克隆存储库，得到Zydis源码。 2.由于笔者使用的]]></description>
 </item></channel>
 </rss>
