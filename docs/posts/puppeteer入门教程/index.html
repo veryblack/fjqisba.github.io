@@ -26,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/fjqisba.github.io\/posts\/puppeteer%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B\/"
-        },"genre": "posts","keywords": "浏览器, 自动化, 模拟, 入门教程","wordcount":  659 ,
+        },"genre": "posts","keywords": "浏览器, 自动化, 模拟, 入门教程","wordcount":  1100 ,
         "url": "https:\/\/fjqisba.github.io\/posts\/puppeteer%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B\/","datePublished": "2020-09-01T00:00:00+00:00","dateModified": "2020-09-01T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "fjqisba"},"author": {
@@ -103,8 +103,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Puppeteer入门教程</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>fjqisba</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/puppeteer/"><i class="far fa-folder fa-fw"></i>Puppeteer</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-01">2020-09-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 659 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-01">2020-09-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1100 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -113,6 +113,11 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#实际应用场景模拟">实际应用场景模拟</a>
       <ul>
         <li></li>
       </ul>
@@ -127,7 +132,13 @@
 <li>模拟键盘输入、表单自动提交、登录网页等，实现 UI 自动化测试</li>
 <li>捕获站点的时间线，以便追踪网站，帮助分析网站性能问题</li>
 </ol>
-<p>//To do&hellip;为什么选择Puppeteer</p>
+<p>至于为什么选择Puppeteer，而不使用Selenium等其它浏览器控制框架，是因为Puppeteer有以下优点:</p>
+<ol>
+<li>Puppeteer 比Selenium安装简单，使用起来较为简单、更人性化，是站在用户使用的角度上来设计操作接口，而不是浏览器的角度。</li>
+<li>由Chrome官方团队进行维护，拥有更好的前景。</li>
+<li>功能比Selenium更强大，可以很方便地对网络请求进行拦截。</li>
+<li>使用与浏览器相同的语言，与浏览器衔接更好。</li>
+</ol>
 <hr>
 <p>Puppeteer实际上为NodeJs的一个库，NodeJs部署也较为简单，首先到NodeJs官网</p>
 <p><a href="https://nodejs.org/en/">https://nodejs.org/en/</a>配置好NodeJs环境。</p>
@@ -141,24 +152,23 @@
 <li>允许用户将自己编写的包或命令行程序上传到NPM服务器供别人使用。</li>
 </ul>
 <hr>
-<p>到此puppeteer环境就已经配置好了，如果要编写puppeteer相关的代码，那么还需要配置一下NodeJs的编程环境:</p>
-<ul>
-<li>新手推荐使用webstorm</li>
-<li>老鸟推荐使用VSCode</li>
-<li>大神可以直接使用记事本来编写代码，使用命令行node xx.js来运行。</li>
-</ul>
-<p>官方入门的 DEMO如下:</p>
+<p>到此puppeteer环境就已经配置好了，如果要编写puppeteer相关的代码，那么还需要配置一下NodeJs的编程环境，可选的编程环境有</p>
+<p>webstorm、(Visual Studio或者VSCode) + TypeScript。</p>
+<p>官方API文档:https://zhaoqize.github.io/puppeteer-api-zh_CN/#/，请务必频繁查看此API文档。</p>
+<h4 id="browser类">Browser类</h4>
+<p>一个Browser可以理解成一个浏览器实例，这个类较为简单，使用Browser创建Page例子如下:</p>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">puppeteer</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;puppeteer&#39;</span><span class="p">);</span>
- 
-<span class="p">(</span><span class="nx">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
- <span class="kr">const</span> <span class="nx">browser</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">puppeteer</span><span class="p">.</span><span class="nx">launch</span><span class="p">();</span>
- <span class="kr">const</span> <span class="nx">page</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">browser</span><span class="p">.</span><span class="nx">newPage</span><span class="p">();</span>
- <span class="nx">await</span> <span class="nx">page</span><span class="p">.</span><span class="kr">goto</span><span class="p">(</span><span class="s1">&#39;https://www.baidu.com&#39;</span><span class="p">);</span>
- <span class="nx">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">screenshot</span><span class="p">({</span><span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;example.png&#39;</span><span class="p">});</span>
- 
- <span class="nx">await</span> <span class="nx">browser</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
-<span class="p">})();</span>
-</code></pre></div><p>运行上面这段JS后，便会在目录下生成百度页面的截图了。</p>
+
+<span class="nx">puppeteer</span><span class="p">.</span><span class="nx">launch</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">async</span> <span class="nx">browser</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">page</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">browser</span><span class="p">.</span><span class="nx">newPage</span><span class="p">();</span>			<span class="c1">//浏览器创建一个新标签页
+</span><span class="c1"></span>  <span class="nx">await</span> <span class="nx">page</span><span class="p">.</span><span class="kr">goto</span><span class="p">(</span><span class="s1">&#39;https://www.baidu.com&#39;</span><span class="p">);</span>		<span class="c1">//标签页导航到指定网址
+</span><span class="c1"></span>  <span class="nx">await</span> <span class="nx">browser</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>						<span class="c1">//关闭浏览器
+</span><span class="c1"></span><span class="p">});</span>
+</code></pre></div><h4 id="page类">Page类</h4>
+<p>这个类最为关键，可能是要用到的最多的一个类。Page提供对单个标签页进行操作的方法，一个Browser实例可以有多个Page实例。</p>
+<h2 id="实际应用场景模拟">实际应用场景模拟</h2>
+<p>就以https://zhaoqize.github.io/puppeteer-api-zh_CN/#/这个网址为例吧，目标是爬取出这个网址中全部的文档内容。</p>
+<h4 id="1新建浏览器定位到页面">1、新建浏览器，定位到页面</h4>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">

@@ -14,7 +14,7 @@ https://github.com/jas502n/IDA_Pro_7.2
 
 
 
-由于没有完整的Hex-Rays插件，因此只好去杂交7.0版本的Hex-Rays，插件在此[下载](https://github.com/fjqisba/fjqisba.github.io/releases/download/HexRays/XRayDecompiers7.0-Extended.V2.rar)。
+由于没有完整的Hex-Rays插件，因此只好去杂交7.0版本的Hex-Rays，插件在此[下载](https://github.com/fjxisba/GithubDropBox/releases/download/HexRays/XRayDecompiers7.0-Extended.V2.rar)。
 
 
 

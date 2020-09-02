@@ -5,6 +5,8 @@ tags: ["浏览器","自动化","模拟","入门教程"]
 categories: ["Puppeteer"]
 ---
 
+
+
 # Puppeteer入门教程
 
 Puppeteer，木偶框架，是谷歌开源的一个浏览器控制框架。它提供了一组可以用来操控Chrome的API，使得我们可以很方便地进行一些浏览器模拟、自动化操作，例如:
@@ -16,7 +18,12 @@ Puppeteer，木偶框架，是谷歌开源的一个浏览器控制框架。它�
 
 
 
-//To do...为什么选择Puppeteer
+至于为什么选择Puppeteer，而不使用Selenium等其它浏览器控制框架，是因为Puppeteer有以下优点:
+
+1. Puppeteer 比Selenium安装简单，使用起来较为简单、更人性化，是站在用户使用的角度上来设计操作接口，而不是浏览器的角度。
+2. 由Chrome官方团队进行维护，拥有更好的前景。
+3. 功能比Selenium更强大，可以很方便地对网络请求进行拦截。
+4. 使用与浏览器相同的语言，与浏览器衔接更好。
 
 
 
@@ -42,26 +49,39 @@ NPM是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署�
 
 ------
 
-到此puppeteer环境就已经配置好了，如果要编写puppeteer相关的代码，那么还需要配置一下NodeJs的编程环境:
+到此puppeteer环境就已经配置好了，如果要编写puppeteer相关的代码，那么还需要配置一下NodeJs的编程环境，可选的编程环境有
 
-- 新手推荐使用webstorm
-- 老鸟推荐使用VSCode
-- 大神可以直接使用记事本来编写代码，使用命令行node xx.js来运行。
+webstorm、(Visual Studio或者VSCode) + TypeScript。
 
-官方入门的 DEMO如下:
+
+
+官方API文档:https://zhaoqize.github.io/puppeteer-api-zh_CN/#/，请务必频繁查看此API文档。
+
+#### Browser类
+
+一个Browser可以理解成一个浏览器实例，这个类较为简单，使用Browser创建Page例子如下:
 
 ```js
 const puppeteer = require('puppeteer');
- 
-(async () => {
- const browser = await puppeteer.launch();
- const page = await browser.newPage();
- await page.goto('https://www.baidu.com');
- await page.screenshot({path: 'example.png'});
- 
- await browser.close();
-})();
+
+puppeteer.launch().then(async browser => {
+  const page = await browser.newPage();			//浏览器创建一个新标签页
+  await page.goto('https://www.baidu.com');		//标签页导航到指定网址
+  await browser.close();						//关闭浏览器
+});
 ```
 
-运行上面这段JS后，便会在目录下生成百度页面的截图了。
+#### Page类
+
+这个类最为关键，可能是要用到的最多的一个类。Page提供对单个标签页进行操作的方法，一个Browser实例可以有多个Page实例。
+
+
+
+## 实际应用场景模拟
+
+就以https://zhaoqize.github.io/puppeteer-api-zh_CN/#/这个网址为例吧，目标是爬取出这个网址中全部的文档内容。
+
+#### 1、新建浏览器，定位到页面
+
+
 
