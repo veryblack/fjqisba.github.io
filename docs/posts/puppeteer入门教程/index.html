@@ -17,7 +17,7 @@
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fjqisba.github.io/posts/puppeteer%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" /><link rel="prev" href="https://fjqisba.github.io/posts/%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fjqisba.github.io/posts/puppeteer%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" /><link rel="prev" href="https://fjqisba.github.io/posts/%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0/" /><link rel="next" href="https://fjqisba.github.io/posts/ie-tab%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95%E6%8F%92%E4%BB%B6/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -26,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/fjqisba.github.io\/posts\/puppeteer%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B\/"
-        },"genre": "posts","keywords": "浏览器, 自动化, 模拟, 入门教程","wordcount":  1100 ,
+        },"genre": "posts","keywords": "浏览器, 自动化, 模拟, 入门教程","wordcount":  1550 ,
         "url": "https:\/\/fjqisba.github.io\/posts\/puppeteer%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B\/","datePublished": "2020-09-01T00:00:00+00:00","dateModified": "2020-09-01T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "fjqisba"},"author": {
@@ -103,8 +103,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Puppeteer入门教程</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>fjqisba</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/puppeteer/"><i class="far fa-folder fa-fw"></i>Puppeteer</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-01">2020-09-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1100 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-01">2020-09-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1550 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -132,13 +132,18 @@
 <li>模拟键盘输入、表单自动提交、登录网页等，实现 UI 自动化测试</li>
 <li>捕获站点的时间线，以便追踪网站，帮助分析网站性能问题</li>
 </ol>
-<p>至于为什么选择Puppeteer，而不使用Selenium等其它浏览器控制框架，是因为Puppeteer有以下优点:</p>
-<ol>
-<li>Puppeteer 比Selenium安装简单，使用起来较为简单、更人性化，是站在用户使用的角度上来设计操作接口，而不是浏览器的角度。</li>
-<li>由Chrome官方团队进行维护，拥有更好的前景。</li>
-<li>功能比Selenium更强大，可以很方便地对网络请求进行拦截。</li>
-<li>使用与浏览器相同的语言，与浏览器衔接更好。</li>
-</ol>
+<p>至于为什么选择Puppeteer，而不使用Selenium、CEF等其它框架来模拟浏览器操作，是因为Puppeteer有以下优点:</p>
+<ul>
+<li>Puppeteer是站在用户使用的角度上来设计操作接口，而不是浏览器的角度，使用起来较为简单、更人性化</li>
+<li>由Chrome官方团队进行维护，拥有更好的前景</li>
+<li>功能比Selenium更强大，可以很方便地对网络请求进行拦截</li>
+<li>使用与浏览器相同的语言，与浏览器衔接更好</li>
+</ul>
+<p>Puppeteer同样也有缺点，缺点如下:</p>
+<ul>
+<li>只支持Chrome、FireFox浏览器，不支持IE浏览器</li>
+<li>只支持NodeJs、C#两种语言</li>
+</ul>
 <hr>
 <p>Puppeteer实际上为NodeJs的一个库，NodeJs部署也较为简单，首先到NodeJs官网</p>
 <p><a href="https://nodejs.org/en/">https://nodejs.org/en/</a>配置好NodeJs环境。</p>
@@ -153,7 +158,22 @@
 </ul>
 <hr>
 <p>到此puppeteer环境就已经配置好了，如果要编写puppeteer相关的代码，那么还需要配置一下NodeJs的编程环境，可选的编程环境有</p>
-<p>webstorm、(Visual Studio或者VSCode) + TypeScript。</p>
+<p>webstorm、Visual Studio、VSCode等。这里笔者使用的是Visual Studio，不要问我为什么，Visual Studio天下第一！</p>
+<p>不过在使用Visual Studio的时候，可能会出现一点问题，例如以下代码</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"> <span class="kd">var</span> <span class="nx">百度主页</span> <span class="o">=</span> <span class="s2">&#34;https://www.baidu.com&#34;</span><span class="p">;</span>
+</code></pre></div><p>Visual Studio将无法编译通过，这是因为Visual Studio中的源码默认字符集设置问题，需要将字符集编码改为UTF-8。</p>
+<p>但是VS 2019隐藏了高级保存功能，导致没办法直接去设置代码编码为UTF-8。具体开启步骤参考如下:</p>
+<ol>
+<li>单击“工具”|“自定义”命令，弹出“自定义”对话框。</li>
+<li>单击“命令”标签，进入“命令”选项卡。</li>
+<li>在“菜单栏”下拉列表中，选择“文件”选项。</li>
+<li>单击“添加命令”按钮，弹出“添加命令”对话框。</li>
+<li>在“类别”列表中，选择“文件”选项；在“命令”列表中，选择“高级保存选项”选项。 单击“确定”按钮，关闭“添加命令”对话框。</li>
+<li>选中“控件”列表中的“高级保存选项”选项，单击“上移”或者“下移”按钮，调整该命令的位置。</li>
+<li>单击“关闭”按钮，完成“高级保存选项”命令的添加操作。</li>
+</ol>
+<p>之后我们就可以通过<strong>高级保存选项</strong>来设置源码的字符集编码了。</p>
+<hr>
 <p>官方API文档:https://zhaoqize.github.io/puppeteer-api-zh_CN/#/，请务必频繁查看此API文档。</p>
 <h4 id="browser类">Browser类</h4>
 <p>一个Browser可以理解成一个浏览器实例，这个类较为简单，使用Browser创建Page例子如下:</p>
@@ -167,7 +187,7 @@
 </code></pre></div><h4 id="page类">Page类</h4>
 <p>这个类最为关键，可能是要用到的最多的一个类。Page提供对单个标签页进行操作的方法，一个Browser实例可以有多个Page实例。</p>
 <h2 id="实际应用场景模拟">实际应用场景模拟</h2>
-<p>就以https://zhaoqize.github.io/puppeteer-api-zh_CN/#/这个网址为例吧，目标是爬取出这个网址中全部的文档内容。</p>
+<p>就以爬取百度搜索结果为例吧，目标是爬取出指定搜索结果。</p>
 <h4 id="1新建浏览器定位到页面">1、新建浏览器，定位到页面</h4>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
@@ -192,7 +212,8 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0/" class="prev" rel="prev" title="相似度对比学习"><i class="fas fa-angle-left fa-fw"></i>相似度对比学习</a></div>
+    <div class="post-nav"><a href="/posts/%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0/" class="prev" rel="prev" title="相似度对比学习"><i class="fas fa-angle-left fa-fw"></i>相似度对比学习</a>
+            <a href="/posts/ie-tab%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95%E6%8F%92%E4%BB%B6/" class="next" rel="next" title="IE TAB浏览器扩展插件修改过程">IE TAB浏览器扩展插件修改过程<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"></div></article></div>
             </main><footer class="footer">
