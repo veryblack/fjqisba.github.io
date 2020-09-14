@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>DocFx学习笔记 - fjqisba的个人博客</title><meta name="Description" content="个人笔记本"><meta property="og:title" content="DocFx学习笔记" />
+<meta property="og:description" content="DocFx学习笔记 1.DocFx是微软的一款开源的文档生成工具，下载地址如下:https://github.com/dotnet/docfx" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fjqisba.github.io/posts/docfx%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" />
+<meta property="article:published_time" content="2020-09-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-09-13T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="DocFx学习笔记"/>
+<meta name="twitter:description" content="DocFx学习笔记 1.DocFx是微软的一款开源的文档生成工具，下载地址如下:https://github.com/dotnet/docfx"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fjqisba.github.io/posts/docfx%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" /><link rel="prev" href="https://fjqisba.github.io/posts/%E7%A4%BE%E4%BC%9A%E9%9C%80%E6%B1%82%E4%B8%8E%E5%88%9B%E4%B8%9A/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "DocFx学习笔记",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/fjqisba.github.io\/posts\/docfx%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/"
+        },"genre": "posts","keywords": "笔记, DocFx","wordcount":  2154 ,
+        "url": "https:\/\/fjqisba.github.io\/posts\/docfx%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/","datePublished": "2020-09-13T00:00:00+00:00","dateModified": "2020-09-13T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "fjqisba"},"author": {
+                "@type": "Person",
+                "name": "fjqisba"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="fjqisba的个人博客">主页</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于作者 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="fjqisba的个人博客">主页</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于作者</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">DocFx学习笔记</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>fjqisba</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%9D%82%E6%96%87/"><i class="far fa-folder fa-fw"></i>杂文</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-13">2020-09-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2154 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#docfxjson解析">docfx.json解析</a></li>
+    <li><a href="#更换主题模板">更换主题模板</a></li>
+    <li><a href="#配置文档目录">配置文档目录</a></li>
+    <li><a href="#开启搜索功能">开启搜索功能</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="docfx学习笔记">DocFx学习笔记</h1>
+<p>1.DocFx是微软的一款开源的文档生成工具，下载地址如下:https://github.com/dotnet/docfx/releases</p>
+<p>软件的官网是https://dotnet.github.io/docfx，在里面还可以获取到一些教程</p>
+<p>2.此软件的运行需要.Net Framework 4.7.2环境，需要自行安装</p>
+<p>3.创建一个DocFx工程</p>
+<pre><code>docfx init -q
+</code></pre><p>4.建立网站</p>
+<pre><code>docfx docfx_project\docfx.json --serve
+</code></pre><p>这样就可以通过访问http://localhost:8080来查看文档页面了，里面包含了一些基本的页面。</p>
+<h2 id="docfxjson解析">docfx.json解析</h2>
+<p>docfx.json是docfx用于生成文档的配置文件，目前docfx.json只包含了两个键值对，分别是metadata和build。</p>
+<p>metadata属性如下(暂时对我来说好像没什么用，我就不管了):</p>
+<table>
+<thead>
+<tr>
+<th align="left">Key</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">src</td>
+<td align="center">工程源码的位置</td>
+</tr>
+<tr>
+<td align="left">dest</td>
+<td align="center">存放生成的metadata文件的目录</td>
+</tr>
+<tr>
+<td align="left">force</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">shouldSkipMarkup</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">filter</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">useCompatibilityFileName</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">properties</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>build属性如下:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Key</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">content</td>
+<td align="left">用于生成文档的全部文件</td>
+</tr>
+<tr>
+<td align="left">resources</td>
+<td align="left">资源文件或者元数据文件，例如图片文件。</td>
+</tr>
+<tr>
+<td align="left">overwrite</td>
+<td align="left">Contains all the conceptual files which contains yaml header with <code>uid</code> and is intended to override the existing metadata <code>yml</code> files. <code>name-files</code> file mapping with several ways to define it, as to be described in <strong>Section4</strong>.</td>
+</tr>
+<tr>
+<td align="left">globalMetadata</td>
+<td align="left">应用于每个文件的配置选项，例如在globalMetadata中定义<code>&quot;_appTitle&quot;: &quot;我是标题&quot;</code>,则每个页面都会追加标题文本。</td>
+</tr>
+<tr>
+<td align="left">fileMetadata</td>
+<td align="left">Contains metadata that will be applied to specific files. <code>name-files</code> file mapping with several ways to define it, as to be described in <strong>Section4</strong>.</td>
+</tr>
+<tr>
+<td align="left">globalMetadataFiles</td>
+<td align="left">Specify a list of JSON file path containing globalMetadata settings, as similar to <code>{&quot;key&quot;:&quot;value&quot;}</code>. Please read <strong>Section3.2.3</strong> for detail.</td>
+</tr>
+<tr>
+<td align="left">fileMetadataFiles</td>
+<td align="left">Specify a list of JSON file path containing fileMetadata settings, as similar to <code>{&quot;key&quot;:&quot;value&quot;}</code>. Please read <strong>Section3.2.3</strong> for detail.</td>
+</tr>
+<tr>
+<td align="left">template</td>
+<td align="left">The templates applied to each file in the documentation. It can be a string or an array. The latter ones will override the former ones if the name of the file inside the template collides. If omitted, embedded <code>default</code> template will be used.</td>
+</tr>
+<tr>
+<td align="left">theme</td>
+<td align="left">The themes applied to the documentation. Theme is used to customize the styles generated by <code>template</code>. It can be a string or an array. The latter ones will override the former ones if the name of the file inside the template collides. If omitted, no theme will be applied, the default theme inside the template will be used.</td>
+</tr>
+<tr>
+<td align="left">xref</td>
+<td align="left">Specifies the urls of xrefmap used by content files. Currently, it supports following scheme: http, https, ftp, file, embedded.</td>
+</tr>
+<tr>
+<td align="left">xrefService</td>
+<td align="left">Specifies the url patterns of xref service. Please read <strong>Section3.2.4</strong> for detail.</td>
+</tr>
+<tr>
+<td align="left">exportRawModel</td>
+<td align="left">If set to true, data model to run template script will be extracted in <code>.raw.json</code> extension.</td>
+</tr>
+<tr>
+<td align="left">rawModelOutputFolder</td>
+<td align="left">Specify the output folder for the raw model. If not set, the raw model will be generated to the same folder as the output documentation.</td>
+</tr>
+<tr>
+<td align="left">exportViewModel</td>
+<td align="left">If set to true, data model to apply template will be extracted in <code>.view.json</code> extension.</td>
+</tr>
+<tr>
+<td align="left">viewModelOutputFolder</td>
+<td align="left">Specify the output folder for the view model. If not set, the view model will be generated to the same folder as the output documentation.</td>
+</tr>
+<tr>
+<td align="left">dryRun</td>
+<td align="left">If set to true, template will not be actually applied to the documents. This option is always used with <code>--exportRawModel</code> or <code>--exportViewModel</code>, so that only raw model files or view model files are generated.</td>
+</tr>
+<tr>
+<td align="left">maxParallelism</td>
+<td align="left">Set the max parallelism, 0 (default) is same as the count of CPU cores.</td>
+</tr>
+<tr>
+<td align="left">markdownEngineName</td>
+<td align="left">Set the name of markdown engine, default is <code>dfm</code>, other available engines are <code>gfm</code> and <code>markdig</code>.</td>
+</tr>
+<tr>
+<td align="left">markdownEngineProperties</td>
+<td align="left">Set the parameters for markdown engine, value should be a JSON string.</td>
+</tr>
+<tr>
+<td align="left">noLangKeyword</td>
+<td align="left">Disable default lang keyword, it can be downloaded from <a href="http://dotnet.github.io/docfx/langwordmapping/langwordMapping.yml" target="_blank" rel="noopener noreffer">here</a>.</td>
+</tr>
+<tr>
+<td align="left">keepFileLink</td>
+<td align="left">If set to true, docfx does not dereference (aka. copy) file to the output folder, instead, it saves a <code>link_to_path</code> property inside <code>manifest.json</code> to indicate the physical location of that file. A file link will be created by incremental build and copy resouce file.</td>
+</tr>
+<tr>
+<td align="left">sitemap</td>
+<td align="left">In format <a href="https://dotnet.github.io/docfx/tutorial/docfx.exe_user_manual.html#325-sitemapoptions" target="_blank" rel="noopener noreffer">SitemapOptions</a> Specifies the options for the sitemap.xml file.</td>
+</tr>
+<tr>
+<td align="left">disableGitFeatures</td>
+<td align="left">Disable fetching Git related information for articles. Set to <code>true</code> if fetching git related information is slow for huge Git repositories. Default value is <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="更换主题模板">更换主题模板</h2>
+<p>我个人对官方默认的主题不是特别满意，我们可以去官网下载其它的主题模板。</p>
+<p>下载完成后进行以下步骤使用模板</p>
+<ol>
+<li>
+<p>在Doxfx网站根目录创建一个<em>templates</em>文件夹</p>
+</li>
+<li>
+<p>将主题文件夹拷贝至<em>templates</em>文件夹目录下</p>
+</li>
+<li>
+<p>在docfx.json中的template项中添加模板文件夹的路径，例如我使用的是material主题模板</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;template&#34;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&#34;default&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;templates/mathew&#34;</span>
+    <span class="p">],</span>
+<span class="p">}</span>
+</code></pre></div></li>
+</ol>
+<p>主题文件夹中有一个main.css可以用来修改主题的一些属性</p>
+<h2 id="配置文档目录">配置文档目录</h2>
+<p>docfx工程默认结构如下:</p>
+<ul>
+<li><em>docfx_project/index.md</em>为主页的显示内容</li>
+<li><em>docfx_project/toc.yml</em>为文档目录配置文件，对应<em>docfx_project/api</em>和<em>docfx_project/articles</em>这两个目录</li>
+</ul>
+<p>我们可以通过修改<em>docfx_project/toc.yml</em>来配置文档目录，例如默认配置文件如下</p>
+<div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml">- <span class="k">name</span><span class="p">:</span><span class="w"> </span>Articles<span class="w">
+</span><span class="w">  </span><span class="k">href</span><span class="p">:</span><span class="w"> </span>articles/<span class="w">
+</span><span class="w"></span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>Api<span class="w"> </span>Documentation<span class="w">
+</span><span class="w">  </span><span class="k">href</span><span class="p">:</span><span class="w"> </span>api/<span class="w">
+</span><span class="w">  </span><span class="k">homepage</span><span class="p">:</span><span class="w"> </span>api/index.md<span class="w">
+</span></code></pre></div><p>yml这种数据格式可能不太熟悉，其实和json差不多，转换成json如下</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Articles&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;href&#34;</span><span class="p">:</span> <span class="s2">&#34;articles/&#34;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Api Documentation&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;href&#34;</span><span class="p">:</span> <span class="s2">&#34;api/&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;homepage&#34;</span><span class="p">:</span> <span class="s2">&#34;api/index.md&#34;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div><p>在添加目录或者修改目录的时候，同时也要修改<em>docfx_project/docfx.json</em>中的content，因为content包含用于生成文档的全部文件。</p>
+<h2 id="开启搜索功能">开启搜索功能</h2>
+<p>如果想要开启程序自带的搜索功能，需要进行以下两步:</p>
+<ol>
+<li>
+<p>程序其实预留了一些配置项，通过修改globalMetadata可以设置它们，在<em>docfx_project/docfx.json</em>中添加以下globalMetadata项</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;globalMetadata&#34;</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nt">&#34;_enableSearch&#34;</span><span class="p">:</span> <span class="s2">&#34;true&#34;</span><span class="p">,</span>
+<span class="p">}</span><span class="err">,</span>
+</code></pre></div><p>这样我们就开启了页面上的搜索栏。</p>
+</li>
+<li>
+<p>程序如果要对生成后的HTML文件继续处理，可以通过添加postProcessors项来进行操作，在<em>docfx_project/docfx.json</em>中添加postProcessors项</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;postProcessors&#34;</span><span class="err">:</span> <span class="p">[</span>
+ <span class="s2">&#34;ExtractSearchIndex&#34;</span>
+<span class="p">]</span><span class="err">,</span>
+</code></pre></div><p>这表示程序会在生成HTML文件之后提取里面的单词生成一个数据库，可用于搜索。</p>
+</li>
+</ol>
+<hr>
+<p>程序完整的预留MetaData如下:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Metadata名称</th>
+<th align="left">类型</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">_appTitle</td>
+<td align="left">string</td>
+<td align="left">Will be appended to each output page&rsquo;s head title.</td>
+</tr>
+<tr>
+<td align="left">_appFooter</td>
+<td align="left">string</td>
+<td align="left">页脚内容，如果未设置则默认为Generated by <strong>DocFX</strong></td>
+</tr>
+<tr>
+<td align="left">_appLogoPath</td>
+<td align="left">string</td>
+<td align="left">Logo file&rsquo;s path from output root. Will show DocFX&rsquo;s logo if not specified. Remember to add file to resource.</td>
+</tr>
+<tr>
+<td align="left">_appFaviconPath</td>
+<td align="left">string</td>
+<td align="left">Favicon file&rsquo;s path from output root. Will show DocFX&rsquo;s favicon if not specified. Remember to add file to resource.</td>
+</tr>
+<tr>
+<td align="left">_enableSearch</td>
+<td align="left">bool</td>
+<td align="left">用于设置是否在页面上方显示搜索栏</td>
+</tr>
+<tr>
+<td align="left">_enableNewTab</td>
+<td align="left">bool</td>
+<td align="left">Indicate whether to open a new tab when clicking an external link. (internal link always shows within the current tab)</td>
+</tr>
+<tr>
+<td align="left">_disableNavbar</td>
+<td align="left">bool</td>
+<td align="left">Indicate whether to show the navigation bar on the top of page.</td>
+</tr>
+<tr>
+<td align="left">_disableBreadcrumb</td>
+<td align="left">bool</td>
+<td align="left">Indicate whether to show breadcrumb on the top of page.</td>
+</tr>
+<tr>
+<td align="left">_disableToc</td>
+<td align="left">bool</td>
+<td align="left">Indicate whether to show table of contents on the left of page.</td>
+</tr>
+<tr>
+<td align="left">_disableAffix</td>
+<td align="left">bool</td>
+<td align="left">Indicate whether to show the affix bar on the right of page.</td>
+</tr>
+<tr>
+<td align="left">_disableContribution</td>
+<td align="left">bool</td>
+<td align="left">Indicate whether to show the <code>View Source</code> and <code>Improve this Doc</code> buttons.</td>
+</tr>
+<tr>
+<td align="left">_gitContribute</td>
+<td align="left">object</td>
+<td align="left">Customize the <code>Improve this Doc</code> URL button for public contributors. Use <code>repo</code> to specify the contribution repository URL. Use <code>branch</code> to specify the contribution branch. Use <code>apiSpecFolder</code> to specify the folder for new overwrite files. If not set, the git URL and branch of the current git repository will be used.</td>
+</tr>
+<tr>
+<td align="left">_gitUrlPattern</td>
+<td align="left">string</td>
+<td align="left">Choose the URL pattern of the generated link for <code>View Source</code> and <code>Improve this Doc</code>. Supports <code>github</code> and <code>vso</code> currently. If not set, DocFX will try speculating the pattern from domain name of the git URL.</td>
+</tr>
+<tr>
+<td align="left">_noindex</td>
+<td align="left">bool</td>
+<td align="left">File(s) specified are not returned in search results</td>
+</tr>
+</tbody>
+</table>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-09-13</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>,&nbsp;<a href="/tags/docfx/">DocFx</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E7%A4%BE%E4%BC%9A%E9%9C%80%E6%B1%82%E4%B8%8E%E5%88%9B%E4%B8%9A/" class="prev" rel="prev" title="社会需求与创业"><i class="fas fa-angle-left fa-fw"></i>社会需求与创业</a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">fjqisba</div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">fjqisba</a></span>&nbsp;|&nbsp;<span class="license">MIT</span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

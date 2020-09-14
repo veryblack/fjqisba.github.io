@@ -1,7 +1,7 @@
 ---
 title: "DocFx学习笔记"
 date: 2020-09-13
-tags: ["笔记" "DocFx"]
+tags: ["笔记","DocFx"]
 categories: ["杂文"]
 ---
 
@@ -106,9 +106,7 @@ build属性如下:
    }
    ```
 
-我所使用的mathew主题中有一个main.css可以用来修改一些属性
-
-其中
+主题文件夹中有一个main.css可以用来修改主题的一些属性
 
 ## 配置文档目录
 

@@ -1,0 +1,22 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>笔记 - 标签 - fjqisba的个人博客</title>
+        <link>https://fjqisba.github.io/tags/%E7%AC%94%E8%AE%B0/</link>
+        <description>笔记 - 标签 - fjqisba的个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>fjqisba@sohu.com (fjqisba)</managingEditor>
+            <webMaster>fjqisba@sohu.com (fjqisba)</webMaster><lastBuildDate>Sun, 13 Sep 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://fjqisba.github.io/tags/%E7%AC%94%E8%AE%B0/" rel="self" type="application/rss+xml" /><item>
+    <title>DocFx学习笔记</title>
+    <link>https://fjqisba.github.io/posts/docfx%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+    <pubDate>Sun, 13 Sep 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://fjqisba.github.io/posts/docfx%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+    <description><![CDATA[DocFx学习笔记 1.DocFx是微软的一款开源的文档生成工具，下载地址如下:https://github.com/dotnet/docfx]]></description>
+</item><item>
+    <title>Git学习笔记</title>
+    <link>https://fjqisba.github.io/posts/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+    <pubDate>Sun, 23 Aug 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://fjqisba.github.io/posts/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+    <description><![CDATA[Git学习笔记 克隆含有子模块的项目 当一个git项目含有子模块(submodule)时，直接克隆下来的子模块目录里面是空的。 这时可以在执行gi]]></description>
+</item></channel>
+</rss>

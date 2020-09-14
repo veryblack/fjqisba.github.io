@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>IE TAB浏览器扩展插件修改过程 - fjqisba的个人博客</title><meta name="Description" content="个人笔记本"><meta property="og:title" content="IE TAB浏览器扩展插件修改过程" />
+<meta property="og:description" content="IE TAB浏览器扩展插件修改过程 事情是这样的，我在使用Puppeteer框架对网站进行爬取的时候，发现有些页面使用到了ActiveX控件。众所" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fjqisba.github.io/posts/ie-tab%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95%E6%8F%92%E4%BB%B6/" />
+<meta property="article:published_time" content="2020-09-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-09-07T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="IE TAB浏览器扩展插件修改过程"/>
+<meta name="twitter:description" content="IE TAB浏览器扩展插件修改过程 事情是这样的，我在使用Puppeteer框架对网站进行爬取的时候，发现有些页面使用到了ActiveX控件。众所"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fjqisba.github.io/posts/ie-tab%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95%E6%8F%92%E4%BB%B6/" /><link rel="prev" href="https://fjqisba.github.io/posts/puppeteer%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" /><link rel="next" href="https://fjqisba.github.io/posts/%E7%A4%BE%E4%BC%9A%E9%9C%80%E6%B1%82%E4%B8%8E%E5%88%9B%E4%B8%9A/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "IE TAB浏览器扩展插件修改过程",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/fjqisba.github.io\/posts\/ie-tab%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95%E6%8F%92%E4%BB%B6\/"
+        },"genre": "posts","keywords": "浏览器扩展, 绿化","wordcount":  2695 ,
+        "url": "https:\/\/fjqisba.github.io\/posts\/ie-tab%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95%E6%8F%92%E4%BB%B6\/","datePublished": "2020-09-07T00:00:00+00:00","dateModified": "2020-09-07T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "fjqisba"},"author": {
+                "@type": "Person",
+                "name": "fjqisba"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="fjqisba的个人博客">主页</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于作者 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="fjqisba的个人博客">主页</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于作者</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">IE TAB浏览器扩展插件修改过程</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>fjqisba</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E9%80%86%E5%90%91%E7%94%9F%E6%B6%AF/"><i class="far fa-folder fa-fw"></i>逆向生涯</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-07">2020-09-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2695 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#知识点归纳">知识点归纳</a></li>
+    <li><a href="#参考资料">参考资料</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="ie-tab浏览器扩展插件修改过程">IE TAB浏览器扩展插件修改过程</h1>
+<p>事情是这样的，我在使用Puppeteer框架对网站进行爬取的时候，发现有些页面使用到了ActiveX控件。众所周知，只有IE浏览器才支持ActiveX控件，而Puppeteer却不支持IE浏览器！这导致我在爬取的过程中页面无法正常加载，这样一来我也就截取不到我想要的一些请求了。</p>
+<p>在尝试解决该问题的过程我了解到了IE TAB，IE Tab 是网页浏览器的一个扩展插件，支持Firefox/Chrome。</p>
+<h5 id="ie-tab应用场景">IE TAB应用场景:</h5>
+<p>有些网站页面格式不标准，或者使用到了ActiveX控件，只能在IE浏览器中正常显示。而这个时候我们又想在Chrome/FireFox浏览器中访问此网站，这个时候就可以使用IE TAB插件，此插件主要功能是通过调用Internet Explorer的引擎来访问网页，解决一些网页无法在当前标准的浏览器中正常显示的问题。</p>
+<hr>
+<p>该软件安装使用可能要用到科学上网，软件分免费版和授权版两种。</p>
+<p>免费版能满足普通用户的大部分使用需求，但是对选项进行设置需要进行联网。</p>
+<p>授权版有着GPO组策略部署等更方便好用的功能(不知道是啥玩意。。。)。</p>
+<p>于是我便打算对IE TAB进行个人修改(去除一些我不想要的功能，添加我想要的功能)。</p>
+<h2 id="知识点归纳">知识点归纳</h2>
+<p>1.程序ietabhelper.exe会释放一个文件ietab_nm_manifest.json至目录C:\Users\fjqisba\AppData\Local\IE Tab下，同时在注册表SOFTWARE\Google\Chrome\NativeMessagingHosts\net.ietab.ietabhelper.peruser中写入该json文件路径。这样的目的其实是为了注册本地消息主机。</p>
+<blockquote>
+<p><strong>本地消息主机(Native messaging):</strong></p>
+<p>通过将浏览器所在客户端的本地应用注册为<strong>本地消息主机</strong>，Chrome浏览器扩展可以和本地应用之间收发消息。</p>
+<p>本地应用要想成为&quot;本地消息主机&rdquo;，必须有一个有效的json配置文件，例如:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+	<span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;com.my_company.my_application&#34;</span><span class="p">,</span>
+	<span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;My Application&#34;</span><span class="p">,</span>
+	<span class="nt">&#34;path&#34;</span><span class="p">:</span> <span class="s2">&#34;C:\\MyApplication.exe&#34;</span><span class="p">,</span>
+	<span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;stdio&#34;</span><span class="p">,</span>
+	<span class="nt">&#34;allowed_origins&#34;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&#34;chrome-extension://ndbehkpfbjcaflobmibchkjiphgibnid/&#34;</span> <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div><p>其中path为本地应用的执行路径；allowed_origins为授权能够与本地消息主机进行通讯的浏览器扩展，不得有通配符。</p>
+<p>之后在安装本地应用时需要在注册表中指明配置文件的路径，例如创建key</p>
+<p>HKEY_CURRENT_USER\SOFTWARE\Google\Chrome\NativeMessagingHosts\com.my_company.my_application</p>
+<p>设置默认值Default为配置文件所在的绝对路径。</p>
+</blockquote>
+<p>程序注册了本地消息主机，是为了让浏览器扩展和程序自带的ietabhelper.exe进行通讯，个人推测一些核心功能其实是在ietabhelper.exe中，例如调用IE浏览器引擎等。</p>
+<p>很明显我们在重新打包扩展插件的时候，浏览器扩展插件的id会发生变化，因此我们需要修改配置文件中allowed_origins的内容，allowed_origins内容其实来源于ietabhelper.exe中，我们可以对该exe进行patch，加入我们自己的浏览器扩展插件id。</p>
+<p>2.在nathost_manager.js中似乎对浏览器扩展ID还有判断，先不管对不对，加上自己的ID就完事了。</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">_updateAllowedOrigins</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">manifestContent</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// hehijbfgiekmjfkfjpbkbammjbdenadd - Chrome Web Store release
+</span><span class="c1"></span>        <span class="c1">// knnoopddfdgdabjanjmeodpkmlhapkkl - IE Tab Enterprise edition
+</span><span class="c1"></span>        <span class="c1">// ncdgipmkgkhennagnfmnlkflidilhbdi - IE Tab Enterprise self-deployed
+</span><span class="c1"></span>        <span class="c1">// npjkkakdacjaihjaoeliacmecofghagh - Windows Store for Edge
+</span><span class="c1"></span>        <span class="c1">// almljgkjodjgoldenkijomojnejpkcjk - IE Tab Beta for Chrome
+</span><span class="c1"></span>        <span class="kd">var</span> <span class="nx">origins</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">&#39;chrome-extension://hehijbfgiekmjfkfjpbkbammjbdenadd/&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;chrome-extension://knnoopddfdgdabjanjmeodpkmlhapkkl/&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;chrome-extension://ncdgipmkgkhennagnfmnlkflidilhbdi/&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;chrome-extension://npjkkakdacjaihjaoeliacmecofghagh/&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;chrome-extension://almljgkjodjgoldenkijomojnejpkcjk/&#39;</span>
+        <span class="p">];</span>
+        <span class="kd">var</span> <span class="nx">me</span> <span class="o">=</span> <span class="nx">chrome</span><span class="p">.</span><span class="nx">extension</span><span class="p">.</span><span class="nx">getURL</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="nx">origins</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="nx">me</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">origins</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="nx">me</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nx">origins</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">me</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="kd">var</span> <span class="nx">cleanOrigins</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">origins</span><span class="p">);</span>
+        <span class="nx">cleanOrigins</span> <span class="o">=</span> <span class="nx">cleanOrigins</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/[\[\]]/g</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">manifestContent</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;ALLOWED_ORIGINS&#39;</span><span class="p">,</span> <span class="nx">cleanOrigins</span><span class="p">);</span>
+    <span class="p">},</span>
+</code></pre></div><p>3.在进行选项设置的时候，你需要访问http://www.ietab.net/options这个网址才行，其实就软件功能来说，理应可以实现完全本地化的，但是作者非要你访问他的官网，这里我们直接将options.html给离线存储下来，相应的服务器js、html、css也保存到本地，再修正一下HTML引用的文件URL。</p>
+<p>之后我们还需要修改一下程序的配置，在manifest.json中有一个值为content_scripts，简要介绍如下:</p>
+<blockquote>
+<p>Content scripts是在Web页面内运行的javascript脚本。通过使用标准的DOM，它们可以获取浏览器所访问页面的详细信息，并可以修改这些信息。</p>
+<p>下面是content scipt可以做的一些事情范例：</p>
+<p>从页面中找到没有写成超链接形式的url，并将它们转成超链接。
+放大页面字体使文字更清晰
+找到并处理DOM中的microformat
+当然，content scripts也有一些限制，它们不能做的事情包括 ：</p>
+<p>不能使用除了chrome.extension之外的chrome.* 的接口
+不能访问它所在扩展中定义的函数和变量
+不能访问web页面或其它content script中定义的函数和变量
+不能做cross-site XMLHttpRequests
+这些限制其实并不像看上去那么糟糕。Content scripts 可以使用messages机制与它所在的扩展通信，来间接使用chrome.*接口，或访问扩展数据。Content scripts还可以通过共享的DOM来与web页面通信。</p>
+</blockquote>
+<p>总之，可以理解为一个页面注入js，而IE TAB存在这么一个配置</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="err">content_scripts</span><span class="s2">&#34;: 
+</span><span class="s2">[ 
+</span><span class="s2">	{
+</span><span class="s2">      &#34;</span><span class="err">js</span><span class="s2">&#34;: [ &#34;</span><span class="err">js/extapi_cs.js</span><span class="s2">&#34; ],
+</span><span class="s2">      &#34;</span><span class="err">matches</span><span class="s2">&#34;: [ &#34;</span><span class="err">*://*.ietab.net/*</span><span class="s2">&#34; ],
+</span><span class="s2">      &#34;</span><span class="err">run_at</span><span class="s2">&#34;: &#34;</span><span class="err">document_start&#34;</span>
+    <span class="err">}</span> 
+<span class="err">]</span>
+</code></pre></div><p>意思就是，程序在访问http://www.ietab.net/options这个网址时，便会注入extapi_cs.js这个js，这个js非常关键，涉及到核心功能之间的相互通讯，如果没有的话那么功能会无法执行起来。由于我们本地化了options.html，因此我们也需要注入这个js，其实方式也很简单，我们可以直接在options.html中加入下列代码</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;js/extapi_cs.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div><p>这样便完成了和原程序一样的注入。</p>
+<p>4.软件使用到了localStorage来存储配置选项信息+授权信息，在Settings.js中存在以下代码，为程序加载的一些默认项</p>
+<blockquote>
+<p>localStorage为浏览器的本地存储机制，存储时间理论上来说是永久有效的，即不主动清空的话就不会消失，即使保存的数据超出了浏览器所规定的大小，也不会把旧数据清空而只会报错。</p>
+</blockquote>
+<pre><code>DEFAULT_SETTINGS: {
+	'compat-mode': 'IE7S',
+	'disable-intro-page': false,
+	'enable-auto-urls': true,
+	'enable-chrome-popups': true,
+	'settings-refresh-interval': 1000*60*10,    // Every 10 minutes
+	'show-search-box': false,
+	'enable-use-full-window-popups': true,
+	'enable-dep': true,
+	'enable-atl-dep': true,
+	'only-auto-urls' : false,
+	'hide-addr-bar' : false,
+	'show-status-text' : false,
+	'open-popups-in-tab': false,
+	'allow-api-prompt': true,
+	'enable-direct-invoke': false,
+	'scripturl-mitigation': true,
+	'cookie-sync': false,
+	'single-session': false,
+	'local-network': false,
+	'favicon': false,
+	'beforeunload': false,
+	'ietab-header': false,
+	'threaded-popups': false,
+	'ie-dialogs': true,
+	'show-context-menu': true
+},
+</code></pre><p>我们通过拜读js源码得知直接在里面添加以下代码，就完成了授权的破解</p>
+<pre><code>'licensee': 'fjqisba',
+'license-key': 'https://bbs.pediy.com/'
+</code></pre><p>5.根据程序名称，留意到程序似乎有一个检测函数licensePing，作用推测是每天定时向服务器发送License，判断是否有效，无效则取消Lincense，我们直接return即可。</p>
+<p><strong>总结</strong>:通过对该浏览器扩展插件进行学习，也接触了一些关于浏览器插件开发的知识，在理解了作者编写的js源码的情况下，就可以对程序进行一些个人化的修改。</p>
+<p><strong>后记</strong>:该插件其实最后并没有用上，因为我采用了另外一种解决方案——通过正则表达式探测HTML页面中的链接地址得到了想要的请求链接。</p>
+<p>耗时总共5小时。</p>
+<h2 id="参考资料">参考资料</h2>
+<p><a href="http://open.chrome.360.cn/extension_dev/overview.html">http://open.chrome.360.cn/extension_dev/overview.html</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-09-07</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95/">浏览器扩展</a>,&nbsp;<a href="/tags/%E7%BB%BF%E5%8C%96/">绿化</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/puppeteer%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" class="prev" rel="prev" title="Puppeteer入门教程"><i class="fas fa-angle-left fa-fw"></i>Puppeteer入门教程</a>
+            <a href="/posts/%E7%A4%BE%E4%BC%9A%E9%9C%80%E6%B1%82%E4%B8%8E%E5%88%9B%E4%B8%9A/" class="next" rel="next" title="社会需求与创业">社会需求与创业<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">fjqisba</div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">fjqisba</a></span>&nbsp;|&nbsp;<span class="license">MIT</span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
