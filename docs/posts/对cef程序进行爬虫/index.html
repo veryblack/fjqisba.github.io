@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>对CEF程序进行爬虫 - fjqisba的个人博客</title><meta name="Description" content="个人笔记本"><meta property="og:title" content="对CEF程序进行爬虫" />
+<meta property="og:description" content="对CEF程序进行爬虫 想标题想了很久，最后感觉还是用这个标题比较合适。 问题情景是这样的： 有一个较为古老的CEF程序，需要对程序里面的内容进行爬" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fjqisba.github.io/posts/%E5%AF%B9cef%E7%A8%8B%E5%BA%8F%E8%BF%9B%E8%A1%8C%E7%88%AC%E8%99%AB/" />
+<meta property="article:published_time" content="2020-09-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-09-20T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="对CEF程序进行爬虫"/>
+<meta name="twitter:description" content="对CEF程序进行爬虫 想标题想了很久，最后感觉还是用这个标题比较合适。 问题情景是这样的： 有一个较为古老的CEF程序，需要对程序里面的内容进行爬"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fjqisba.github.io/posts/%E5%AF%B9cef%E7%A8%8B%E5%BA%8F%E8%BF%9B%E8%A1%8C%E7%88%AC%E8%99%AB/" /><link rel="prev" href="https://fjqisba.github.io/posts/docfx%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "对CEF程序进行爬虫",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/fjqisba.github.io\/posts\/%E5%AF%B9cef%E7%A8%8B%E5%BA%8F%E8%BF%9B%E8%A1%8C%E7%88%AC%E8%99%AB\/"
+        },"genre": "posts","keywords": "浏览器, CEF, Selenium","wordcount":  768 ,
+        "url": "https:\/\/fjqisba.github.io\/posts\/%E5%AF%B9cef%E7%A8%8B%E5%BA%8F%E8%BF%9B%E8%A1%8C%E7%88%AC%E8%99%AB\/","datePublished": "2020-09-20T00:00:00+00:00","dateModified": "2020-09-20T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "fjqisba"},"author": {
+                "@type": "Person",
+                "name": "fjqisba"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="fjqisba的个人博客">主页</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于作者 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="fjqisba的个人博客">主页</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于作者</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">对CEF程序进行爬虫</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>fjqisba</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%88%AC%E8%99%AB/"><i class="far fa-folder fa-fw"></i>爬虫</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-20">2020-09-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 768 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#开启远程调试">开启远程调试</a></li>
+        <li><a href="#selenium爬虫">Selenium爬虫</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="对cef程序进行爬虫">对CEF程序进行爬虫</h1>
+<p>想标题想了很久，最后感觉还是用这个标题比较合适。</p>
+<p>问题情景是这样的：</p>
+<p>有一个较为古老的CEF程序，需要对程序里面的内容进行爬取，获取数据。</p>
+<p>众所周知，CEF框架无非就是个浏览器，最终访问的还是网页，那么我们直接访问网页进行爬取不就好了吗?</p>
+<p>但实际上能否这样做是值得商榷的，例如我要爬取的那个程序，通过CEF注册JS扩展的方式，使网页与本地的其它进程建立起了通讯，这样我就不能脱离这个CEF程序而独立去访问网页了，否则页面将无法正常运作。</p>
+<p>遇到这种情况，我们可以根据<strong>远程调试协议</strong>开启浏览器的远程调试功能，再用Selenium或者Puppeteer等爬虫工具挂接浏览器，这样我们就可以对浏览器进行一些自动化操作了。</p>
+<h3 id="开启远程调试">开启远程调试</h3>
+<p>开启方法很简单，在要调试的浏览器进程快捷方式属性上加上参数:</p>
+<pre><code>--remote-debugging-port=9222 --user-data-dir=C:\ChromeDebug
+</code></pre><p>远程调试端口一般为9222，用户数据目录我们随便创建一个就好。</p>
+<p>这个时候我们可以访问127.0.0.1:9222/json/version，其中有一个值叫webSocketDebuggerUrl，调试程序主要就是根据这个URL来连接上浏览器的。</p>
+<h3 id="selenium爬虫">Selenium爬虫</h3>
+<p>为什么使用Selenium而不是Puppeteer呢？先前已经提到，该CEF程序是一个古老的程序，Chromium浏览器内核版本为V58左右，而Puppeteer框架对浏览器版本有着严格的限制，官方也有说明:每一个版本的Puppeteer理论上只适配一个特定版本的Chromium浏览器。而Selenium框架对版本支持更加友好，不管老版本还是新版本，都有适配的浏览器驱动，我们只需要去下载相应版本的WebDriver.exe即可。下载地址如下:</p>
+<p><a href="http://chromedriver.storage.googleapis.com/index.html">http://chromedriver.storage.googleapis.com/index.html</a></p>
+<p>至于Selenium的使用教程，参考一下:</p>
+<p><a href="https://selenium-python-zh.readthedocs.io/en/latest/">https://selenium-python-zh.readthedocs.io/en/latest/</a></p>
+<p>编写代码连接上浏览器</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+
+<span class="n">chrome_options</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">ChromeOptions</span><span class="p">()</span>
+<span class="n">chrome_options</span><span class="o">.</span><span class="n">add_experimental_option</span><span class="p">(</span><span class="s1">&#39;debuggerAddress&#39;</span><span class="p">,</span><span class="s1">&#39;127.0.0.1:9222&#39;</span><span class="p">)</span>
+
+<span class="n">browser</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">executable_path</span><span class="o">=</span><span class="s2">&#34;C:\chromedriver.exe&#34;</span><span class="p">,</span><span class="n">chrome_options</span><span class="o">=</span><span class="n">chrome_options</span><span class="p">)</span>
+
+<span class="n">browser</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://www.baidu.com&#39;</span><span class="p">)</span>
+</code></pre></div><p>之后后面的模拟点击、爬取内容就不再细谈了。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-09-20</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/">浏览器</a>,&nbsp;<a href="/tags/cef/">CEF</a>,&nbsp;<a href="/tags/selenium/">Selenium</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/docfx%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="prev" rel="prev" title="DocFx学习笔记"><i class="fas fa-angle-left fa-fw"></i>DocFx学习笔记</a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">fjqisba</div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">fjqisba</a></span>&nbsp;|&nbsp;<span class="license">MIT</span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

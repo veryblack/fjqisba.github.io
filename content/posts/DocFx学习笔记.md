@@ -95,7 +95,7 @@ build属性如下:
 
 2. 将主题文件夹拷贝至*templates*文件夹目录下
 
-3. 在docfx.json中的template项中添加模板文件夹的路径，例如我使用的是material主题模板
+3. 在docfx.json中的template项中添加模板文件夹的路径，例如我使用的是mathew主题模板
 
    ```json
    {

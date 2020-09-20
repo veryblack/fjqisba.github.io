@@ -1,11 +1,9 @@
 ---
 title: "Puppeteer入门教程"
 date: 2020-09-01
-tags: ["浏览器","自动化","模拟","入门教程"]
-categories: ["Puppeteer"]
+tags: ["Puppeteer","自动化","模拟","入门教程"]
+categories: ["爬虫"]
 ---
-
-
 
 # Puppeteer入门教程
 

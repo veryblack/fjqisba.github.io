@@ -4,7 +4,28 @@
         <link>https://fjqisba.github.io/tags/</link>
         <description>Tags - 标签 - fjqisba的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>fjqisba@sohu.com (fjqisba)</managingEditor>
-            <webMaster>fjqisba@sohu.com (fjqisba)</webMaster><lastBuildDate>Sun, 13 Sep 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://fjqisba.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>fjqisba@sohu.com (fjqisba)</webMaster><lastBuildDate>Sun, 20 Sep 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://fjqisba.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>CEF</title>
+    <link>https://fjqisba.github.io/tags/cef/</link>
+    <pubDate>Sun, 20 Sep 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://fjqisba.github.io/tags/cef/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Selenium</title>
+    <link>https://fjqisba.github.io/tags/selenium/</link>
+    <pubDate>Sun, 20 Sep 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://fjqisba.github.io/tags/selenium/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>浏览器</title>
+    <link>https://fjqisba.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/</link>
+    <pubDate>Sun, 20 Sep 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://fjqisba.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>DocFx</title>
     <link>https://fjqisba.github.io/tags/docfx/</link>
     <pubDate>Sun, 13 Sep 2020 00:00:00 &#43;0000</pubDate>
@@ -47,32 +68,11 @@
     <guid>https://fjqisba.github.io/tags/%E7%BB%BF%E5%8C%96/</guid>
     <description><![CDATA[]]></description>
 </item><item>
-    <title>入门教程</title>
-    <link>https://fjqisba.github.io/tags/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</link>
+    <title>Puppeteer</title>
+    <link>https://fjqisba.github.io/tags/puppeteer/</link>
     <pubDate>Tue, 01 Sep 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://fjqisba.github.io/tags/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>模拟</title>
-    <link>https://fjqisba.github.io/tags/%E6%A8%A1%E6%8B%9F/</link>
-    <pubDate>Tue, 01 Sep 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://fjqisba.github.io/tags/%E6%A8%A1%E6%8B%9F/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>浏览器</title>
-    <link>https://fjqisba.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/</link>
-    <pubDate>Tue, 01 Sep 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://fjqisba.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>自动化</title>
-    <link>https://fjqisba.github.io/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/</link>
-    <pubDate>Tue, 01 Sep 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://fjqisba.github.io/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/</guid>
+    <guid>https://fjqisba.github.io/tags/puppeteer/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>
