@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>STL - 标签 - fjqisba的个人博客</title>
+        <link>https://fjqisba.github.io/tags/stl/</link>
+        <description>STL - 标签 - fjqisba的个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>fjqisba@sohu.com (fjqisba)</managingEditor>
+            <webMaster>fjqisba@sohu.com (fjqisba)</webMaster><lastBuildDate>Thu, 24 Sep 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://fjqisba.github.io/tags/stl/" rel="self" type="application/rss+xml" /><item>
+    <title>STL库学习</title>
+    <link>https://fjqisba.github.io/posts/stl%E5%BA%93%E5%AD%A6%E4%B9%A0/</link>
+    <pubDate>Thu, 24 Sep 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://fjqisba.github.io/posts/stl%E5%BA%93%E5%AD%A6%E4%B9%A0/</guid>
+    <description><![CDATA[STL库学习 C++存在非常令人头疼的STL模板库，如果不去了解它的话，还原C++代码又会特别吃力。。。 不同的VC版本或者Debug\Rele]]></description>
+</item></channel>
+</rss>

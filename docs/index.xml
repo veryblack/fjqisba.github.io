@@ -4,9 +4,16 @@
         <link>https://fjqisba.github.io/</link>
         <description>个人笔记本</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>fjqisba@sohu.com (fjqisba)</managingEditor>
-            <webMaster>fjqisba@sohu.com (fjqisba)</webMaster><lastBuildDate>Sun, 20 Sep 2020 00:00:00 &#43;0000</lastBuildDate>
+            <webMaster>fjqisba@sohu.com (fjqisba)</webMaster><lastBuildDate>Thu, 24 Sep 2020 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://fjqisba.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>STL库学习</title>
+    <link>https://fjqisba.github.io/posts/stl%E5%BA%93%E5%AD%A6%E4%B9%A0/</link>
+    <pubDate>Thu, 24 Sep 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://fjqisba.github.io/posts/stl%E5%BA%93%E5%AD%A6%E4%B9%A0/</guid>
+    <description><![CDATA[STL库学习 C++存在非常令人头疼的STL模板库，如果不去了解它的话，还原C++代码又会特别吃力。。。 不同的VC版本或者Debug\Rele]]></description>
+</item><item>
     <title>对CEF程序进行爬虫</title>
     <link>https://fjqisba.github.io/posts/%E5%AF%B9cef%E7%A8%8B%E5%BA%8F%E8%BF%9B%E8%A1%8C%E7%88%AC%E8%99%AB/</link>
     <pubDate>Sun, 20 Sep 2020 00:00:00 &#43;0000</pubDate>
@@ -69,12 +76,5 @@
     <author>作者</author>
     <guid>https://fjqisba.github.io/posts/zydis%E5%8F%8D%E6%B1%87%E7%BC%96%E5%BC%95%E6%93%8E/</guid>
     <description><![CDATA[ZyDis反汇编引擎 Zydis是一个开源的反汇编引擎，项目地址如下: https://github.com/zyantific/zydis 配置ZyDis库 1.克隆存储库，得到Zydis源码。 2.由于笔者使用的]]></description>
-</item><item>
-    <title>获取网络小记</title>
-    <link>https://fjqisba.github.io/posts/%E8%8E%B7%E5%8F%96%E7%BD%91%E7%BB%9C%E5%B0%8F%E8%AE%B0/</link>
-    <pubDate>Sat, 17 Nov 2018 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://fjqisba.github.io/posts/%E8%8E%B7%E5%8F%96%E7%BD%91%E7%BB%9C%E5%B0%8F%E8%AE%B0/</guid>
-    <description><![CDATA[由于没有任何工作经验,大老远跑来北京实习,住在这边的公租房实习生宿舍,获取网络成了我第一个要解决的问题. 幻影WIFI暴力枚举的话我并不是很喜]]></description>
 </item></channel>
 </rss>

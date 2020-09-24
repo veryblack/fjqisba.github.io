@@ -33,7 +33,7 @@ categories: ["爬虫"]
 
 ### Selenium爬虫
 
-为什么使用Selenium而不是Puppeteer呢？先前已经提到，该CEF程序是一个古老的程序，Chromium浏览器内核版本为V58左右，而Puppeteer框架对浏览器版本有着严格的限制，官方也有说明:每一个版本的Puppeteer理论上只适配一个特定版本的Chromium浏览器。而Selenium框架对版本支持更加友好，不管老版本还是新版本，都有适配的浏览器驱动，我们只需要去下载相应版本的WebDriver.exe即可。下载地址如下:
+为什么使用Selenium而不是Puppeteer呢？先前已经提到，该CEF程序是一个古老的程序，Chromium浏览器内核版本为V58左右，而Puppeteer框架对浏览器版本有着严格的限制，官方也有说明:每一个版本的Puppeteer理论上只适配一个特定版本的Chromium浏览器。而Selenium框架对版本支持更加友好，不管老版本还是新版本，都有适配的浏览器驱动，我们只需要去下载相应版本的WebDriver即可。下载地址如下:
 
 http://chromedriver.storage.googleapis.com/index.html
 
