@@ -5,8 +5,6 @@ tags: ["STL"]
 categories: ["C++逆向"]
 ---
 
-# STL库学习
-
 C++存在非常令人头疼的STL模板库，如果不去了解它的话，还原C++代码又会特别吃力。。。
 
 不同的VC版本或者Debug\Release版，STL库都可能有一定的差别。

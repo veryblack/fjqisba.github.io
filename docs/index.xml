@@ -12,7 +12,7 @@
     <pubDate>Thu, 24 Sep 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
     <guid>https://fjqisba.github.io/posts/stl%E5%BA%93%E5%AD%A6%E4%B9%A0/</guid>
-    <description><![CDATA[STL库学习 C++存在非常令人头疼的STL模板库，如果不去了解它的话，还原C++代码又会特别吃力。。。 不同的VC版本或者Debug\Rele]]></description>
+    <description><![CDATA[C++存在非常令人头疼的STL模板库，如果不去了解它的话，还原C++代码又会特别吃力。。。 不同的VC版本或者Debug\Release版，S]]></description>
 </item><item>
     <title>对CEF程序进行爬虫</title>
     <link>https://fjqisba.github.io/posts/%E5%AF%B9cef%E7%A8%8B%E5%BA%8F%E8%BF%9B%E8%A1%8C%E7%88%AC%E8%99%AB/</link>
